@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "waka-bot"
+version = "0.1.0"
+description = ""
+authors = ["arybzhan"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.13,<3.15"
+aiogram = "^3.24.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
