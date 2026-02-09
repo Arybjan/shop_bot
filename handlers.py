@@ -10,13 +10,16 @@ user = Router()
 async def command_start_handler(message: Message):
     await message.answer("hello", reply_markup=kb.menu)
 
+
 @user.message(F.text == "Каталог")
 async def msg_catalog(message: Message):
     await message.answer("Выберите Категорию товара", reply_markup=kb.catalog)
 
+
 @user.message(Command("assort"))
 async def assortiment_handler(message: Message):
     await message.answer("Элегет нахуй ээй")
+
 
 @user.callback_query(F.data.startswith("brand_"))
 async def check_brand(callback: CallbackQuery):
