@@ -1,7 +1,8 @@
 from aiogram import Bot, Dispatcher
-from handlers import user
+from app.handlers import user
 from os import getenv
 from dotenv import load_dotenv
+from database.models import async_main
 
 import asyncio
 import logging
@@ -14,6 +15,7 @@ TOKEN = getenv("BOT_TOKEN")
 
 # setup
 async def main() -> None:
+    await async_main()
     dp = Dispatcher()
     bot = Bot(token=TOKEN)
     dp.include_router(user)
